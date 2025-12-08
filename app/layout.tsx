@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Gatekeeper from "./Gatekeeper";
 
 export const metadata: Metadata = {
   title: "Hautaus-App",
-  description: "Hautausjärjestelyt",
+  description: "Hautausjärjestelyt ja muistotilaisuudet",
 };
 
 export default function RootLayout({
@@ -14,7 +15,10 @@ export default function RootLayout({
   return (
     <html lang="fi">
       <body className="bg-slate-50">
-        {children}
+        {/* Sovellus on suojattu Gatekeeperillä */}
+        <Gatekeeper>
+          {children}
+        </Gatekeeper>
       </body>
     </html>
   );
