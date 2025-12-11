@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Gatekeeper from "./Gatekeeper";
 
 export const metadata: Metadata = {
   title: "Hautaus-App",
@@ -15,10 +14,7 @@ export default function RootLayout({
   return (
     <html lang="fi">
       <body className="bg-slate-50">
-        {/* Sovellus on suojattu Gatekeeperillä */}
-        <Gatekeeper>
-          {children}
-        </Gatekeeper>
+        {children}
       </body>
     </html>
   );
